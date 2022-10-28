@@ -1,23 +1,13 @@
 @font-face {
     font-family: 'jetbrains_monoregular';
-    src: url('assets/fonts/jetbrainsmono-variablefont_wght-webfont.woff2') format('woff2'),
-         url('assets/fonts/jetbrainsmono-variablefont_wght-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'jetbrains_monoitalic';
-    src: url('jetbrainsmono-italic-variablefont_wght-webfont.woff2') format('woff2'),
-         url('jetbrainsmono-italic-variablefont_wght-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
+    src: url(assets/fonts/jetbrainsmono-variablefont_wght-webfont.woff);
 }
 
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'jetbrains_monoregular';
 }
 
 :root{
@@ -38,7 +28,6 @@ body{
 }
 
 h1{
-    font-family: 'jetbrains_monoitalic';
     font-style: normal;
     font-weight: 700;
     font-size: 24px;
@@ -64,7 +53,6 @@ header p{
     font-size: 32px;
     line-height: 42px;
     color: #E6E5EA;
-    font-family: 'jetbrains_monoitalic';
 }
 
 .copy-svg{
@@ -94,7 +82,6 @@ section{
 }
 
 .character-length p:first-child{
-    font-family: 'jetbrains_monoitalic';
     font-style: normal;
     font-weight: 700;
     font-size: 18px;
@@ -103,7 +90,6 @@ section{
 }
 
 .character-length p:nth-child(2){
-    font-family: 'jetbrains_monoitalic';
     font-style: normal;
     font-weight: 700;
     font-size: 32px;
@@ -147,7 +133,6 @@ input[type='checkbox']{
 
 label{
     margin-left: 24px;
-    font-family: 'jetbrains_monoitalic';
     font-style: normal;
     font-weight: 700;
     font-size: 18px;
@@ -166,7 +151,6 @@ label{
 }
 
 #text-strength {
-    font-family: 'jetbrains_monoitalic';
     font-style: normal;
     font-weight: 700;
     font-size: 18px;
@@ -182,7 +166,6 @@ label{
 }
 
 #text-medium{
-    font-family: 'jetbrains_monoitalic';
     font-style: normal;
     font-weight: 700;
     font-size: 24px;
@@ -211,7 +194,6 @@ label{
 }
 
 .generate p {
-    font-family: 'jetbrains_monoitalic';
     font-style: normal;
     font-weight: 700;
     font-size: 18px;

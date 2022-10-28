@@ -21,7 +21,6 @@ function generatePassword(){ // 2) Définit la longueur dans la moulinette
     cryptoPassword(parseInt(characterLength.innerText));
 }
 
-
 function cryptoPassword(lenght){ // 3) Moulinette qui crée un mot de passe
 
     for(let i = 0; i <= lenght; i++) {
