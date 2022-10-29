@@ -44,19 +44,39 @@ header{
     display: flex;
     justify-content: space-around;
     align-items: center;
-    gap: 250px;
+    position: relative;
 }
 
-header p{
+header p:first-child{
     font-style: normal;
     font-weight: 700;
     font-size: 32px;
     line-height: 42px;
     color: #E6E5EA;
+    position: absolute;
+    left: 32px;
+}
+
+.copied{
+    visibility: hidden;
+    color: var(--neongreen);
+    position: absolute;
+    right: 69px;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 24px;
+}
+
+.visible{
+    visibility: visible;
 }
 
 .copy-svg{
     cursor: pointer;
+    position: absolute;
+    right: 32px;
+
 }
 
 .copy-svg:hover .copy{
@@ -148,6 +168,7 @@ label{
     justify-content: space-around;
     gap: 100px;
     align-items: center;
+    position: relative;
 }
 
 #text-strength {
@@ -157,6 +178,8 @@ label{
     line-height: 24px;
     color: var(--grey);
     text-transform: uppercase;
+    position: absolute;
+    left: 32px;
 }
 
 .strength-value{
@@ -174,13 +197,44 @@ label{
     color: var(--almostwhite);
     text-transform: uppercase;
     margin-right: 10px;
+    position: absolute;
+    right: 110px;
+}
+
+.all-value{
+    width: 64px;
+    height: 28px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    right: 32px;
 }
 
 .value{
     width: 10px;
     height: 28px;
     border: 2px solid white;
-    margin-left: 8px;
+}
+
+.red{
+    background: #F64A4A;
+    border: 2px solid #F64A4A;
+}
+
+.orange{
+    background: #FB7C58;
+    border: 2px solid #FB7C58;
+}
+
+.yellow{
+    background: #F8CD65;
+    border: 2px solid #F8CD65;
+}
+
+.green{
+    background: #A4FFAF;
+    border: 2px solid #A4FFAF;
 }
 
 .generate{
