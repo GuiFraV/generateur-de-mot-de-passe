@@ -47,13 +47,26 @@ function cryptoPassword(lenght){ // 3) Moulinette qui crée un mot de passe rand
         numberCase(randomNumber3);
 
         symbolCase(randomNumber4);
-    
     }
-
-    let pass = password.join('').slice(0,lenght);
-    header.innerHTML = pass;
-        
+  
     strengthValue();
+
+    finalValue(lenght);
+}
+
+function finalValue(lenght){
+
+    if([...checkbox].some(el => el.checked)){ // Va regarder chaque input dans un array si l'un d'eux est coché 
+        let pass = password.join('').slice(0,lenght);
+        header.style.opacity = '1';
+        header.innerHTML = pass;
+
+    } else {
+        resetStrengthValue();
+        resetForceValue('');
+        header.innerText = 'PTx1f5DaFX';
+        header.style.opacity = '0.5';
+    }
 }
 
 function lowerCase(randomNumber){ // Ajoute des minuscules
@@ -80,9 +93,9 @@ function symbolCase(randomNumber4){ // Ajoute des caractères spéciaux
     }
 }
 
-function copyBoard(){ // Manipulation du password generator
+function copyBoard(){ // Copie du mdp dans le presse-papier
     let copyText = header.innerHTML;
-    navigator.clipboard.writeText(copyText); // Copie du mdp dans le presse-papier
+    navigator.clipboard.writeText(copyText);
     copied();
 }
 
@@ -96,7 +109,6 @@ function copied(){ // Gestion du mot 'copied'
 }
 
 function strengthValue(){ // Gestion de la force du mdp (couleur + indication par mot)
-    const textForce = document.querySelector('.text-medium');
 
     if(header.innerHTML.length <= 0){
         resetStrengthValue();
@@ -105,20 +117,20 @@ function strengthValue(){ // Gestion de la force du mdp (couleur + indication pa
 
     if(header.innerHTML.length >= 1 && header.innerHTML.length <= 5){
         resetStrengthValue();
-        textForce.innerHTML = 'too weak!';
+        resetForceValue('too weak!');
         firstSquare.classList.add('red');
     }
 
     if(header.innerHTML.length > 5 && header.innerHTML.length <= 10){
         resetStrengthValue();
-        textForce.innerHTML = 'weak';
+        resetForceValue('weak');
         firstSquare.classList.add('orange');
         secondSquare.classList.add('orange');
     }
 
     if(header.innerHTML.length > 10 && header.innerHTML.length <= 15){
         resetStrengthValue();
-        textForce.innerHTML = 'medium';
+        resetForceValue('medium');
         firstSquare.classList.add('yellow');
         secondSquare.classList.add('yellow');
         thirdSquare.classList.add('yellow');
@@ -126,7 +138,7 @@ function strengthValue(){ // Gestion de la force du mdp (couleur + indication pa
 
     if(header.innerHTML.length > 15 && header.innerHTML.length <= 20){
         resetStrengthValue();
-        textForce.innerHTML = 'strong';
+        resetForceValue('strong');
         firstSquare.classList.add('green');
         secondSquare.classList.add('green');
         thirdSquare.classList.add('green');
@@ -135,7 +147,7 @@ function strengthValue(){ // Gestion de la force du mdp (couleur + indication pa
 
 }
 
-function resetStrengthValue(){
+function resetStrengthValue(){ // Reset des couleurs
 
     firstSquare.classList.remove('green');
     secondSquare.classList.remove('green');
@@ -156,6 +168,11 @@ function resetStrengthValue(){
     secondSquare.classList.remove('red');
     thirdSquare.classList.remove('red');
     forthSquare.classList.remove('red');
+}
+
+function resetForceValue(message){ // Reset du message 
+    const textForce = document.querySelector('.text-medium');
+    textForce.innerHTML = message;
 }
 
 //Events:
