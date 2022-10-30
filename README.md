@@ -1,6 +1,6 @@
 # Generateur de mot de passe
 
-J'ai voulu comprendre comment fonctionner un generateur de mot de passe:
+J'ai voulu comprendre comment fonctionné un generateur de mot de passe:
 
 ![Screenshot](pass.gif)
 
